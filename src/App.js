@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.png';
+import React, {Component} from 'react';
+import Main from './components/Main';
 import './App.css';
+import{Button} from "antd";
 
-function App() {
+
+
+export default class App extends Component {
+constructor(props){
+  super(props);
+  this.state={
+    userName:'Emilia'
+  }
+}
+
+
+
+
+ render(){
+   const { userName }=this.state;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App-container">
+      <header className="App-container">
+       
+       <Main userName={userName}/>
+
       </header>
     </div>
   );
 }
+}
 
-export default App;

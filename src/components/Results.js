@@ -1,12 +1,48 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import logo from "../img/logo.png";
+import { Layout, Input, Row, Col } from "antd";
+import ProductCard from "./ProductCart";
+const { Header, Content, Footer } = Layout;
+const { Search } = Input;
 
 export default class Results extends Component {
+  render() {
+    const { userName, products } = this.props;
 
-render(){
-    return(
-        <div> soy main</div>
-    )
-}
+    return (
+      <Layout>
+        <Header className="header">
+          <Row>
+            <Col xs={{ span: 5 }} lg={{ span: 3 }}>
+              <img src={logo} className="header-logo" alt="logo" />
+            </Col>
+            <Col xs={{ span: 5 }} lg={{ span: 16 }}>
+              <div className="header-search">
+                <Search
+                  placeholder="¿que queres comprar?"
+                  onSearch={(value) => console.log(value)}
+                  enterButton
+                />
+              </div>
+            </Col>
+            <Col xs={{ span: 0 }} lg={{ span: 5 }}>
+              <div className="header-greetings">bienvenido {userName}</div>
+            </Col>
+          </Row>
+        </Header>
+        <Content className="content">
+          <p> Resultados de la busqueda </p>
+          <Row>
+            {products.map(prod => (
+              <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+                <ProductCard key={prod.id} product={prod} />
+              </Col>
+            ))}
+          </Row>
+        </Content>
 
-
+        <Footer className="footer">footer</Footer>
+      </Layout>
+    );
+  }
 }

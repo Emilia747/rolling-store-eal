@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import Main from './components/Main';
+import Results from './components/Results';
 import './App.css';
 import{Button} from "antd";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 
@@ -40,13 +47,23 @@ constructor(props){
    const { userName, products }=this.state;
 
   return (
-    <div className="App-container">
-      <header className="App-container">
-       
-       <Main userName={userName} products={products}/>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <div className="App-container">
+            <Main userName={userName} products={products}/>
+          </div>
+        </Route>
+        <Route path="/results">
+          <div className="App-container">
+            <Results userName={userName} products={products}/>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
 
-      </header>
-    </div>
+    
+    
   );
 }
 }

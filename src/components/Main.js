@@ -2,10 +2,33 @@ import React, { Component } from "react";
 import logo from "../img/logo.png";
 import { Layout, Input, Row, Col } from "antd";
 import ProductCard from "./ProductCart";
+import {Redirect} from 'react-router-dom';
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
+
+
+
 export default class Main extends Component {
+ constructor(props){
+   super (props);
+   this.state ={
+     redirect: false
+   }
+ }
+ 
+ 
+ 
+  setRedirect= ()=> {
+   this.setState({redirect:true})
+ }
+ renderRedirect=()=>{
+   if(this.state.redirect){
+     return <Redirect to='/results'/>
+   }
+ }
+ 
+ 
   render() {
     const { userName, products } = this.props;
 
@@ -18,9 +41,11 @@ export default class Main extends Component {
             </Col>
             <Col xs={{ span: 5 }} lg={{ span: 16 }}>
               <div className="header-search">
+               {this.renderRedirect()}
+               
                 <Search
                   placeholder="¿que queres comprar?"
-                  onSearch={(value) => console.log(value)}
+                  onSearch={this.setRedirect}
                   enterButton
                 />
               </div>

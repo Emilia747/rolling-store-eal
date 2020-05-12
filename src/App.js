@@ -9,7 +9,27 @@ export default class App extends Component {
 constructor(props){
   super(props);
   this.state={
-    userName:'Emilia'
+    userName:'Emilia',
+    products: [
+      {
+        id: 'prod01',
+        name: 'notebook',
+        brand: 'Asus',
+        price: 19000
+      },
+      {
+        id: 'prod02',
+        name: 'zapatillas',
+        brand: 'Nike',
+        price: 3500
+      },
+      {
+        id: 'prod03',
+        name: 'juego de ps4',
+        brand: 'Dark Souls',
+        price: 5000
+      }
+    ],
   }
 }
 
@@ -17,13 +37,13 @@ constructor(props){
 
 
  render(){
-   const { userName }=this.state;
+   const { userName, products }=this.state;
 
   return (
     <div className="App-container">
       <header className="App-container">
        
-       <Main userName={userName}/>
+       <Main userName={userName} products={products}/>
 
       </header>
     </div>

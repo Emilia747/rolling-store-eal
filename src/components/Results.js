@@ -24,7 +24,7 @@ export default class Results extends Component {
       }
  
     render() {
-    const { userName, products } = this.props;
+    const { userName, results } = this.props;
 
     return (
       <Layout>
@@ -51,9 +51,9 @@ export default class Results extends Component {
         <Content className="content">
           <p> Resultados de la busqueda </p>
           <Row>
-            {products.map(prod => (
-              <Col xs={{ span: 24 }} lg={{ span: 8 }}>
-                <ProductCard key={prod.id} product={prod} />
+            {results.map(resul => (
+              <Col xs={{ span: 24 }} lg={{ span: 24 }}>
+                <ProductCard key={resul.id} product={resul} />
               </Col>
             ))}
           </Row>

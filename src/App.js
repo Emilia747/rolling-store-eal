@@ -38,7 +38,7 @@ constructor(props){
       }
     ],
     results:[],
-    term:'',
+    term:''
   }
 }
 
@@ -46,12 +46,21 @@ updateTerm (term) {
   this.setState({term})
 }
 
-
+updateList(newList, term){
+  const {products}= this.state;
+  term !==''?
+  this.setState({
+    results: newList,
+    term
+  }):
+  this.setState({ results:products})
+}
 
 
  render(){
-   const { userName, products, term }=this.state;
+   const { userName, products, term, results }=this.state;
    const updateTerm= this.updateTerm.bind(this);
+   const updateList= this.updateList.bind(this);
 
   return (
     <Router>
@@ -63,6 +72,7 @@ updateTerm (term) {
             products={products}
             updateTerm={updateTerm}
             term={term}
+            updateList={updateList}
             />
           </div>
         </Route>
@@ -70,7 +80,9 @@ updateTerm (term) {
           <div className="App-container">
             <Results 
             userName={userName} 
+            results={results}
             products={products}
+            term={term}
             />
           </div>
         </Route>

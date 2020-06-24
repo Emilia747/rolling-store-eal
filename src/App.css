@@ -6,11 +6,15 @@
   --test1: red;
   --test2: blue;
   --test3: yellow;
+  --white: #fff;
+  --black: #000;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
 .App-container {
   background-color: var(--background);
   min-height: 100vh;
@@ -20,6 +24,7 @@
   font-size: calc(10px + 2vmin);
   color: var(--text);
 }
+
 .logo {
   width: 120px;
   height: 31px;
@@ -27,6 +32,7 @@
   margin: 16px 28px 16px 0;
   float: left;
 }
+
 .greetings {
   width: 120px;
   height: 31px;
@@ -34,26 +40,70 @@
   margin: 16px 28px 16px 0;
   float: right;
 }
+
 .App-link {
   color: var(--details);
 }
+
+.content-color1 {
+  background-color: var(--test1);
+}
+.content-color2 {
+  background-color: var(--test2);
+}
+.content-color3 {
+  background-color: var(--test3);
+}
+
+/*-------------------------------------------------------------------*/
+
 .header{
   color: var(--text) !important;
 }
+
+.header-logo {
+  height: 60px;
+  cursor: pointer !important;
+}
+
+.header-search {
+  display: flex;
+  position: relative;
+}
+
+.header{
+  color: var(--text) !important;
+}
+
+.header-logo {
+  height: 60px;
+  cursor: pointer !important;
+}
+
 .header-search {
   display: flex;
   justify-content: center;
   margin-top: 15px;
 }
-.header-logo {
-  height: 60px;
-  cursor: pointer !important;
-}
+
 .header-greetings {
-  display:flex;
+  display: flex;
   justify-content: center;
   font-size: 16px;
 }
+
+.clear-icon {
+  color: var(--secondary);
+  top: -17px;
+  position: absolute;
+  z-index: 9999;
+  right: 47px;
+  bottom: 0;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+/*-------------------------------------------------------------------*/
 .content {
   background-color: var(--background);
   display: flex;
@@ -61,13 +111,69 @@
   justify-content: center;
   align-items: center;
 }
+
 .footer {
   color: var(--text) !important;
   background-color: var(--details) !important;
 }
+
 .product-card {
   background-color: var(--secondary);
-  margin: 10px;
-  padding:15px ;
+  padding: 15px;
 }
 
+.products-container {
+  padding: 0 30px;
+}
+
+.product-imageContainer {
+  position: relative;
+  background-color: white;
+  filter: brightness(90%);
+}
+
+.product-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 200px;
+  max-width: 100%;
+}
+
+/*-------------------------------------------------------------------*/
+.productInfo {
+  background-color: var(--secondary);
+  padding: 15px;
+  min-width: 600px;
+  padding: 20px;
+  margin: 0 40px;
+}
+
+.productInfo-imageContainer {
+  position: relative;
+  background-color: white;
+  filter: brightness(90%);
+  padding: 20px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.productInfo-description {
+  padding: 20px;
+  text-align: center;
+}
+
+/*-------------------------------------------------------------------*/
+.cartDetails {
+  background-color: var(--secondary);
+  padding: 15px;
+  margin: 20px;
+}
+/*-------------------------------------------------------------------*/
+
+.footer {
+  color: var(--text) !important;
+  background-color: var(--details) !important;
+}

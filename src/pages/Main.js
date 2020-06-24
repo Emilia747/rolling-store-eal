@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "../img/logo.png";
 import { Layout, Input, Row, Col } from "antd";
-import ProductCard from "./ProductCart";
+import ProductCard from "../components/ProductCart";
 import {Redirect} from 'react-router-dom';
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;

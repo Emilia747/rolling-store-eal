@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Main from './components/Main';
-import Results from './components/Results';
+import Main from './pages/Main';
+import Results from './pages/Results';
 import './App.css';
 import{Button} from "antd";
 import {
@@ -9,6 +9,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import{firebaseApp} from './firebase';
 
 
 
